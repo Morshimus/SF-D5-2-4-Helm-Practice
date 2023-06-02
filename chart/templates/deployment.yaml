@@ -37,11 +37,11 @@ spec:
             - name: http
               containerPort: {{ .Values.service.port }}
               protocol: TCP
-          {{- if $.Values.limits }}
+          {{- if .Values.limits }}
           resources:
            limits:
-             memory: {{ $.Values.limits.memory }}
-             cpu: {{ $.Values.limits.cpu }}    
+             memory: {{ .Values.limits.memory }}
+             cpu: {{ .Values.limits.cpu }}    
           {{- end }}      
           livenessProbe:
             httpGet:
