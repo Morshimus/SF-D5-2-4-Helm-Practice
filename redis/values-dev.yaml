@@ -3,8 +3,7 @@ autoscaling:
   minReplicas: 2
   maxReplicas: 4
   targetCPUUtilizationPercentage: 50
-image.repository: redis
-image.tag: latest
+  targetMemoryUtilizationPercentage: 60
 resources:
   limits:
     memory: 200Mi
