@@ -1,6 +1,6 @@
 
-replicaCount: 4
 autoscaling.enabled: true
+autoscaling.minReplica: 3
 image.repository: redis
 image.tag: latest
 resources:
