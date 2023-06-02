@@ -3,5 +3,7 @@ replicaCount: 4
 autoscaling.enabled: true
 image.repository: redis
 image.tag: latest
-limits.cpu: 0.2
-limits.memory: 200M
+resources:
+  limits:
+    cpu: 0.2
+    memory: 200M
