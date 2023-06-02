@@ -37,8 +37,6 @@ spec:
             - name: http
               containerPort: {{ .Values.service.port }}
               protocol: TCP
-          resources:
-          {{- toYaml .Values.resources | nindent 10 }}     
           livenessProbe:
             httpGet:
               path: /
@@ -47,6 +45,9 @@ spec:
             httpGet:
               path: /
               port: http
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+      {{- with .Values.nodeSelector }}      
       nodeSelector:
         {{- toYaml . | nindent 8 }}
       {{- with .Values.affinity }}
