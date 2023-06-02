@@ -37,12 +37,8 @@ spec:
             - name: http
               containerPort: {{ .Values.service.port }}
               protocol: TCP
-          {{- if .Values.resources }}
-            {{- with .Values.resources }}
           resources:
-              {{- toYaml . | nindent 8 }}   
-            {{- end }} 
-          {{- end }}      
+          {{ toYaml .Values.resources | indent 10 }}     
           livenessProbe:
             httpGet:
               path: /
