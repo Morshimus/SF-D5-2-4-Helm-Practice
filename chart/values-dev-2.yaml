@@ -4,6 +4,6 @@ autoscaling.enabled: true
 image.repository: redis
 image.tag: latest
 resources:
-  limits:
+- limits:
     cpu: 0.2
     memory: 200M
