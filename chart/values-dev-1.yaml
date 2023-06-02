@@ -1,3 +1,0 @@
-nginx:
-  replicaCount: 1
-  autoscaling.enabled: true
